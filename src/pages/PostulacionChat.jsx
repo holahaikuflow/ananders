@@ -39,7 +39,7 @@ function Avatar({ foto, nombre, size = 36 }) {
   }
   return (
     <div
-      className="rounded-full flex items-center justify-center flex-shrink-0 font-josefin uppercase"
+      className="rounded-full flex items-center justify-center flex-shrink-0 font-nunito font-semibold uppercase"
       style={{ width: size, height: size, background: '#2D5242', color: '#F5F0D8', fontSize: Math.round(size * 0.38) }}
     >
       {initial}
@@ -184,8 +184,8 @@ export default function PostulacionChat() {
         <p className="font-nunito text-sm text-moss max-w-xs">{t('chat_not_found_body')}</p>
         <Link
           to={backTo}
-          className="font-josefin uppercase text-xs"
-          style={{ letterSpacing: '0.2em', color: '#E8620A' }}
+          className="font-nunito font-semibold uppercase text-xs"
+          style={{ letterSpacing: '0.16em', color: '#E8620A' }}
         >
           {t(backKey)}
         </Link>
@@ -225,8 +225,8 @@ export default function PostulacionChat() {
         <div className="max-w-xl mx-auto">
           <Link
             to={backTo}
-            className="font-josefin uppercase transition-colors mb-3 inline-block"
-            style={{ letterSpacing: '0.2em', fontSize: '0.6rem', color: '#5C8A72' }}
+            className="font-nunito font-semibold uppercase transition-colors mb-3 inline-block"
+            style={{ letterSpacing: '0.16em', fontSize: '0.72rem', color: '#5C8A72' }}
           >
             {t(backKey)}
           </Link>
@@ -244,10 +244,10 @@ export default function PostulacionChat() {
               </div>
             </div>
             <span
-              className="flex-shrink-0 font-josefin uppercase px-2.5 py-1 rounded-full"
+              className="flex-shrink-0 font-nunito font-semibold uppercase px-2.5 py-1 rounded-full"
               style={{
                 letterSpacing: '0.12em',
-                fontSize: '0.58rem',
+                fontSize: '0.72rem',
                 background: statusColors.bg,
                 color: statusColors.color,
               }}
@@ -267,8 +267,8 @@ export default function PostulacionChat() {
               <div key={msg.id} className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
                 {msg.isOpening && (
                   <p
-                    className="font-josefin uppercase mb-1.5"
-                    style={{ letterSpacing: '0.2em', fontSize: '0.55rem', color: '#A8A8A8' }}
+                    className="font-nunito font-semibold uppercase mb-1.5"
+                    style={{ letterSpacing: '0.16em', fontSize: '0.72rem', color: '#6F7F70' }}
                   >
                     {t('chat_opening_label')}
                   </p>
@@ -335,12 +335,12 @@ export default function PostulacionChat() {
               type="button"
               onClick={handleSend}
               disabled={sending}
-              className="flex-shrink-0 font-josefin uppercase rounded-full py-3 px-5 transition-colors disabled:opacity-50"
+              className="flex-shrink-0 font-nunito font-semibold uppercase rounded-full py-3 px-5 transition-colors disabled:opacity-50"
               style={{
                 background: '#1A3028',
                 color: '#F0E498',
-                fontSize: '0.65rem',
-                letterSpacing: '0.2em',
+                fontSize: '0.72rem',
+                letterSpacing: '0.16em',
                 minHeight: 'auto',
               }}
             >

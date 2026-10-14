@@ -1,10 +1,10 @@
 // Piezas tipográficas repetidas en todas las páginas.
 
-export function Eyebrow({ children, color = '#C8A832', className = 'mb-3', spacing = '0.5em' }) {
+export function Eyebrow({ children, color = '#C8A832', className = 'mb-3' }) {
   return (
     <p
-      className={`font-josefin ${className}`}
-      style={{ fontSize: '0.6rem', letterSpacing: spacing, textTransform: 'uppercase', color, fontWeight: 400 }}
+      className={`font-nunito font-semibold ${className}`}
+      style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color }}
     >
       {children}
     </p>
@@ -25,7 +25,7 @@ export function DarkHero({ eyebrow, title, children, background = '#1A3028', max
   return (
     <div style={{ background }} className={`px-5 md:px-10 ${className}`}>
       <div className={`${maxWidth} mx-auto`}>
-        <Eyebrow color="rgba(200,168,50,0.65)">{eyebrow}</Eyebrow>
+        <Eyebrow color="#C8A832">{eyebrow}</Eyebrow>
         <h1
           className="font-josefin font-thin mb-4"
           style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#F5F0D8', lineHeight: 1.1 }}

@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
-import { CONTINENT_KEYS, DURATION_BUCKETS, TYPE_KEYS, getExperiences } from '../data/experiences'
+import { CONTINENT_KEYS, DURATION_BUCKETS, TYPE_KEYS } from '../data/experiences'
+import { useExperiences } from '../lib/useExperiences'
 import ExperienceCard from '../components/ExperienceCard'
 import FilterChip from '../components/FilterChip'
 import { SearchIcon } from '../components/Section'
@@ -27,8 +28,8 @@ function EmptyState() {
 function GroupTitle({ children }) {
   return (
     <p
-      className="font-josefin mb-2.5"
-      style={{ fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#7BA896', fontWeight: 400 }}
+      className="font-nunito font-semibold mb-2.5"
+      style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7BA896' }}
     >
       {children}
     </p>
@@ -36,10 +37,10 @@ function GroupTitle({ children }) {
 }
 
 export default function Explore() {
-  const { t, lang } = useLang()
+  const { t } = useLang()
   const [params, setParams] = useSearchParams()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const all = useMemo(() => getExperiences(lang), [lang])
+  const { data: all, loading, error } = useExperiences()
 
   // El estado de los filtros vive en la URL para que los links del footer y del buscador funcionen.
   const query = params.get('q') || ''
@@ -90,8 +91,8 @@ export default function Explore() {
   const clearButton = activeFilters.length > 0 && (
     <button
       onClick={clearAll}
-      className="font-josefin"
-      style={{ fontSize: '0.6rem', letterSpacing: '0.15em', color: '#4A7560', textDecoration: 'underline', minHeight: 'auto' }}
+      className="font-nunito font-semibold"
+      style={{ fontSize: '0.72rem', letterSpacing: '0.15em', color: '#4A7560', textDecoration: 'underline', minHeight: 'auto' }}
     >
       {t('explore_clear')}
     </button>
@@ -131,8 +132,8 @@ export default function Explore() {
       <div style={{ background: '#1A3028' }} className="px-5 md:px-10 py-10">
         <div className="max-w-5xl mx-auto">
           <p
-            className="font-josefin mb-2"
-            style={{ fontSize: '0.6rem', letterSpacing: '0.5em', textTransform: 'uppercase', color: 'rgba(200,168,50,0.65)', fontWeight: 400 }}
+            className="font-nunito font-semibold mb-2"
+            style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832' }}
           >
             {t('explore_eyebrow')}
           </p>
@@ -157,7 +158,7 @@ export default function Explore() {
               style={{ color: '#F5F0D8' }}
             />
             {query && (
-              <button onClick={() => update('q', '')} aria-label="×" style={{ color: 'rgba(168,196,180,0.5)', fontSize: '1rem', minHeight: 'auto' }}>
+              <button onClick={() => update('q', '')} aria-label="×" style={{ color: '#93A796', fontSize: '1rem', minHeight: 'auto' }}>
                 ×
               </button>
             )}
@@ -169,7 +170,7 @@ export default function Explore() {
         <div className="flex gap-8">
           <aside className="hidden md:flex flex-col gap-6 flex-shrink-0" style={{ width: '190px' }}>
             <div className="flex items-center justify-between">
-              <p className="font-josefin uppercase" style={{ letterSpacing: '0.35em', color: '#1A3028', fontSize: '0.65rem', fontWeight: 400 }}>
+              <p className="font-nunito font-semibold uppercase" style={{ letterSpacing: '0.16em', color: '#1A3028', fontSize: '0.72rem' }}>
                 {t('explore_filters')}
               </p>
               {clearButton}
@@ -179,7 +180,7 @@ export default function Explore() {
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-5">
-              <p className="font-josefin" style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#4A7560', fontWeight: 400 }}>
+              <p className="font-nunito font-semibold" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#4A7560' }}>
                 {results.length} {t('explore_results')}
                 {activeFilters.length > 0 && (
                   <span style={{ color: '#C8A832' }}>
@@ -188,10 +189,10 @@ export default function Explore() {
                 )}
               </p>
               <button
-                className="md:hidden font-josefin uppercase flex items-center gap-2"
+                className="md:hidden font-nunito font-semibold uppercase flex items-center gap-2"
                 onClick={() => setMobileOpen((v) => !v)}
                 aria-expanded={mobileOpen}
-                style={{ letterSpacing: '0.22em', color: '#2D5242', fontSize: '0.65rem', fontWeight: 400, minHeight: 'auto' }}
+                style={{ letterSpacing: '0.16em', color: '#2D5242', fontSize: '0.72rem', minHeight: 'auto' }}
               >
                 {t('explore_filters')}
                 {activeFilters.length > 0 && (
@@ -217,9 +218,9 @@ export default function Explore() {
                 {activeFilters.map((f) => (
                   <span
                     key={f.key}
-                    className="flex items-center gap-2 font-josefin px-3 py-1 rounded-full"
+                    className="flex items-center gap-2 font-nunito font-semibold px-3 py-1 rounded-full"
                     style={{
-                      fontSize: '0.6rem',
+                      fontSize: '0.72rem',
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
                       background: 'var(--an-linen)',
@@ -236,7 +237,20 @@ export default function Explore() {
               </div>
             )}
 
-            {results.length === 0 ? (
+            {loading ? (
+              <p className="font-nunito text-sm py-8 text-center" style={{ color: '#4A7560' }}>…</p>
+            ) : error ? (
+              <div className="flex flex-col items-center py-12 gap-3 text-center">
+                <p className="font-nunito text-sm" style={{ color: '#C84A1A' }}>{t('explore_error')}</p>
+                <button
+                  onClick={() => window.location.reload()}
+                  className="font-nunito font-semibold uppercase text-xs"
+                  style={{ letterSpacing: '0.16em', color: '#4A7560', textDecoration: 'underline', minHeight: 'auto' }}
+                >
+                  {t('explore_error_retry')}
+                </button>
+              </div>
+            ) : results.length === 0 ? (
               <EmptyState />
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

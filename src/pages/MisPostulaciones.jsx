@@ -50,7 +50,7 @@ export default function MisPostulaciones() {
         <p className="font-josefin uppercase text-cream mb-4" style={{ fontSize: '1rem', letterSpacing: '0.1em' }}>
           {t('exp_seeker_denied_title')}
         </p>
-        <Link to="/mis-experiencias" className="font-josefin uppercase px-6 py-3 rounded-md bg-gold text-jungle text-xs tracking-widest">
+        <Link to="/mis-experiencias" className="font-nunito font-semibold uppercase px-6 py-3 rounded-md bg-cta text-white text-xs" style={{ letterSpacing: '0.16em' }}>
           {t('nav_mis_exp')}
         </Link>
       </main>
@@ -77,7 +77,8 @@ export default function MisPostulaciones() {
             <p className="font-nunito text-sm text-moss max-w-xs">{t('myapps_empty_body')}</p>
             <Link
               to="/explore"
-              className="font-josefin uppercase mt-2 px-6 py-3 rounded-md bg-gold text-jungle text-xs tracking-widest hover:bg-dew transition-colors"
+              className="font-nunito font-semibold uppercase mt-2 px-6 py-3 rounded-md bg-cta text-white text-xs hover:bg-cta/90 transition-colors"
+              style={{ letterSpacing: '0.16em' }}
             >
               {t('nav_explore')} →
             </Link>
@@ -100,8 +101,8 @@ export default function MisPostulaciones() {
                       </p>
                     </div>
                     <span
-                      className="flex-shrink-0 font-josefin uppercase px-2.5 py-1 rounded-full"
-                      style={{ letterSpacing: '0.15em', fontSize: '0.6rem', background: colors.bg, color: colors.color }}
+                      className="flex-shrink-0 font-nunito font-semibold uppercase px-2.5 py-1 rounded-full"
+                      style={{ letterSpacing: '0.15em', fontSize: '0.72rem', background: colors.bg, color: colors.color }}
                     >
                       {t(`apply_status_${app.estado}`)}
                     </span>
@@ -109,7 +110,7 @@ export default function MisPostulaciones() {
 
                   <div className="flex items-center gap-4 pt-1 border-t border-linen">
                     <p className="font-nunito text-xs text-moss">
-                      <span className="font-josefin uppercase" style={{ fontSize: '0.55rem', letterSpacing: '0.2em' }}>{t('myapps_col_facilitator')}: </span>
+                      <span className="font-nunito font-semibold uppercase" style={{ fontSize: '0.72rem', letterSpacing: '0.16em' }}>{t('myapps_col_facilitator')}: </span>
                       {facilitatorName}
                     </p>
                     <p className="font-nunito text-xs text-moss ml-auto">
@@ -119,8 +120,8 @@ export default function MisPostulaciones() {
                   <div className="pt-1 border-t border-linen">
                     <Link
                       to={`/postulacion/${app.id}`}
-                      className="font-josefin uppercase text-xs transition-colors"
-                      style={{ letterSpacing: '0.2em', color: '#E8620A' }}
+                      className="font-nunito font-semibold uppercase text-xs transition-colors"
+                      style={{ letterSpacing: '0.16em', color: '#E8620A' }}
                     >
                       {t('chat_open')}
                     </Link>

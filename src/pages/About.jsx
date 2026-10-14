@@ -13,7 +13,7 @@ export default function About() {
     <main>
       <section style={{ background: '#1A3028' }} className="px-5 md:px-10 py-20 md:py-28 text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <Eyebrow color="rgba(200,168,50,0.65)" className="mb-4">{t('about_eyebrow')}</Eyebrow>
+          <Eyebrow color="#C8A832" className="mb-4">{t('about_eyebrow')}</Eyebrow>
           <h1
             className="font-josefin font-thin mb-6"
             style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#F5F0D8', lineHeight: 1.05 }}
@@ -21,7 +21,7 @@ export default function About() {
             {t('about_title')}
           </h1>
           <StarMark size={48} className="mb-6" />
-          <p className="font-nunito font-extralight text-sm md:text-base italic leading-relaxed max-w-lg" style={{ color: 'rgba(200,230,215,0.75)' }}>
+          <p className="font-nunito font-extralight text-sm md:text-base italic leading-relaxed max-w-lg" style={{ color: '#BCCABF' }}>
             {t('about_hero_quote')}
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function About() {
                   {i < arr.length - 1 && <div className="flex-1 mt-2" style={{ width: '1px', background: 'rgba(200,168,50,0.25)' }} />}
                 </div>
                 <div>
-                  <p className="font-josefin mb-1" style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#C8A832', fontWeight: 400 }}>
+                  <p className="font-nunito font-semibold mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832' }}>
                     {item.date}
                   </p>
                   <h3 className="font-josefin text-sm mb-2" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: '#1A3028', fontWeight: 400 }}>
@@ -106,7 +106,7 @@ export default function About() {
             ))}
           </div>
           <div className="text-center px-5 py-10 rounded-xl" style={{ background: '#1A3028' }}>
-            <p className="font-nunito font-extralight text-base md:text-lg italic leading-relaxed mx-auto" style={{ color: 'rgba(240,228,152,0.75)', maxWidth: '560px' }}>
+            <p className="font-nunito font-extralight text-base md:text-lg italic leading-relaxed mx-auto" style={{ color: '#BCCABF', maxWidth: '560px' }}>
               {t('about_intention_quote')}
             </p>
           </div>
@@ -123,15 +123,15 @@ export default function About() {
         <div className="flex gap-3 flex-wrap justify-center">
           <Link
             to="/explore"
-            className="font-josefin uppercase px-8 py-4 rounded-md"
-            style={{ letterSpacing: '0.3em', background: '#1A3028', color: '#F0E498', fontWeight: 400, fontSize: '0.72rem', minHeight: 'auto' }}
+            className="font-nunito font-semibold uppercase px-8 py-4 rounded-md"
+            style={{ letterSpacing: '0.16em', background: '#1A3028', color: '#F0E498', fontSize: '0.72rem', minHeight: 'auto' }}
           >
             {t('about_cta_btn')}
           </Link>
           <Link
             to="/safety"
-            className="font-josefin uppercase px-7 py-4 rounded-md"
-            style={{ letterSpacing: '0.28em', border: '0.5px solid rgba(26,48,40,0.3)', color: '#1A3028', fontWeight: 300, fontSize: '0.68rem', minHeight: 'auto' }}
+            className="font-nunito font-semibold uppercase px-7 py-4 rounded-md"
+            style={{ letterSpacing: '0.16em', border: '0.5px solid rgba(26,48,40,0.3)', color: '#1A3028', fontSize: '0.72rem', minHeight: 'auto' }}
           >
             {t('about_safety_eyebrow')}
           </Link>

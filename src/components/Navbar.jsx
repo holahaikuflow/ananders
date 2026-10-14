@@ -6,7 +6,7 @@ import Logo, { ORANGE } from './Logo'
 import LangToggle from './LangToggle'
 
 const INK = '#1A1A1A'
-const GRAY = '#6B6B6B'
+const GRAY = '#4C5A4E'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -38,14 +38,13 @@ export default function Navbar() {
             <Link
               key={to}
               to={to}
-              className="font-josefin uppercase transition-colors"
+              className="font-nunito font-semibold uppercase transition-colors"
               style={{
-                letterSpacing: '0.25em',
-                fontSize: '0.68rem',
+                letterSpacing: '0.16em',
+                fontSize: '0.72rem',
                 color: active ? ORANGE : GRAY,
                 borderBottom: active ? `1.5px solid ${ORANGE}` : 'none',
                 paddingBottom: active ? '2px' : '0',
-                fontWeight: active ? 400 : 300,
                 minHeight: 'auto',
               }}
             >
@@ -60,24 +59,24 @@ export default function Navbar() {
         {!authLoading && session ? (
           <>
             <span
-              className="font-josefin uppercase"
-              style={{ letterSpacing: '0.2em', color: GRAY, fontSize: '0.68rem', maxWidth: '9rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+              className="font-nunito font-semibold uppercase"
+              style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.72rem', maxWidth: '9rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
               title={displayName}
             >
               {displayName}
             </span>
             <NavLink
               to="/perfil"
-              className="font-josefin uppercase transition-colors"
-              style={({ isActive }) => ({ letterSpacing: '0.25em', color: isActive ? ORANGE : GRAY, fontSize: '0.68rem', minHeight: 'auto', fontWeight: 300 })}
+              className="font-nunito font-semibold uppercase transition-colors"
+              style={({ isActive }) => ({ letterSpacing: '0.16em', color: isActive ? ORANGE : GRAY, fontSize: '0.72rem', minHeight: 'auto' })}
             >
               {t('nav_profile')}
             </NavLink>
             {isFacilitator && (
               <NavLink
                 to="/mis-experiencias"
-                className="font-josefin uppercase transition-colors"
-                style={({ isActive }) => ({ letterSpacing: '0.25em', color: isActive ? ORANGE : GRAY, fontSize: '0.68rem', minHeight: 'auto', fontWeight: 300 })}
+                className="font-nunito font-semibold uppercase transition-colors"
+                style={({ isActive }) => ({ letterSpacing: '0.16em', color: isActive ? ORANGE : GRAY, fontSize: '0.72rem', minHeight: 'auto' })}
               >
                 {t('nav_mis_exp')}
               </NavLink>
@@ -85,16 +84,16 @@ export default function Navbar() {
             {isSeeker && (
               <NavLink
                 to="/mis-postulaciones"
-                className="font-josefin uppercase transition-colors"
-                style={({ isActive }) => ({ letterSpacing: '0.25em', color: isActive ? ORANGE : GRAY, fontSize: '0.68rem', minHeight: 'auto', fontWeight: 300 })}
+                className="font-nunito font-semibold uppercase transition-colors"
+                style={({ isActive }) => ({ letterSpacing: '0.16em', color: isActive ? ORANGE : GRAY, fontSize: '0.72rem', minHeight: 'auto' })}
               >
                 {t('nav_mis_apps')}
               </NavLink>
             )}
             <button
               onClick={() => signOut()}
-              className="font-josefin uppercase transition-colors"
-              style={{ letterSpacing: '0.25em', color: GRAY, fontSize: '0.68rem', minHeight: 'auto', fontWeight: 300 }}
+              className="font-nunito font-semibold uppercase transition-colors"
+              style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('nav_logout')}
             </button>
@@ -103,15 +102,15 @@ export default function Navbar() {
           <>
             <Link
               to="/login"
-              className="font-josefin uppercase transition-colors"
-              style={{ letterSpacing: '0.25em', color: GRAY, fontSize: '0.68rem', minHeight: 'auto', fontWeight: 300 }}
+              className="font-nunito font-semibold uppercase transition-colors"
+              style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('nav_login')}
             </Link>
             <Link
               to="/join"
-              className="font-josefin uppercase px-4 py-2 rounded-md transition-all"
-              style={{ letterSpacing: '0.25em', background: ORANGE, color: '#ffffff', fontSize: '0.68rem', fontWeight: 400, minHeight: 'auto' }}
+              className="font-nunito font-semibold uppercase px-4 py-2 rounded-md transition-all"
+              style={{ letterSpacing: '0.16em', background: ORANGE, color: '#ffffff', fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('nav_join')}
             </Link>
@@ -144,8 +143,8 @@ export default function Navbar() {
               key={to}
               to={to}
               onClick={() => setOpen(false)}
-              className="font-josefin uppercase"
-              style={{ letterSpacing: '0.3em', color: INK, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+              className="font-nunito font-semibold uppercase"
+              style={{ letterSpacing: '0.16em', color: INK, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
             >
               {label}
             </Link>
@@ -154,16 +153,16 @@ export default function Navbar() {
           {!authLoading && session ? (
             <>
               <span
-                className="font-josefin uppercase"
-                style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.78rem', fontWeight: 300 }}
+                className="font-nunito font-semibold uppercase"
+                style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.78rem' }}
               >
                 {displayName}
               </span>
               <Link
                 to="/perfil"
                 onClick={() => setOpen(false)}
-                className="font-josefin uppercase"
-                style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+                className="font-nunito font-semibold uppercase"
+                style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
               >
                 {t('nav_profile')}
               </Link>
@@ -171,8 +170,8 @@ export default function Navbar() {
                 <Link
                   to="/mis-experiencias"
                   onClick={() => setOpen(false)}
-                  className="font-josefin uppercase"
-                  style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+                  className="font-nunito font-semibold uppercase"
+                  style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
                 >
                   {t('nav_mis_exp')}
                 </Link>
@@ -181,16 +180,16 @@ export default function Navbar() {
                 <Link
                   to="/mis-postulaciones"
                   onClick={() => setOpen(false)}
-                  className="font-josefin uppercase"
-                  style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+                  className="font-nunito font-semibold uppercase"
+                  style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
                 >
                   {t('nav_mis_apps')}
                 </Link>
               )}
               <button
                 onClick={() => { signOut(); setOpen(false) }}
-                className="font-josefin uppercase text-left"
-                style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+                className="font-nunito font-semibold uppercase text-left"
+                style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
               >
                 {t('nav_logout')}
               </button>
@@ -200,16 +199,16 @@ export default function Navbar() {
               <Link
                 to="/login"
                 onClick={() => setOpen(false)}
-                className="font-josefin uppercase"
-                style={{ letterSpacing: '0.3em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', fontWeight: 300, justifyContent: 'flex-start' }}
+                className="font-nunito font-semibold uppercase"
+                style={{ letterSpacing: '0.16em', color: GRAY, fontSize: '0.85rem', minHeight: 'auto', justifyContent: 'flex-start' }}
               >
                 {t('nav_login')}
               </Link>
               <Link
                 to="/join"
                 onClick={() => setOpen(false)}
-                className="font-josefin uppercase px-5 py-3 rounded-md text-center"
-                style={{ letterSpacing: '0.3em', background: ORANGE, color: '#ffffff', fontSize: '0.8rem', fontWeight: 400, minHeight: 'auto' }}
+                className="font-nunito font-semibold uppercase px-5 py-3 rounded-md text-center"
+                style={{ letterSpacing: '0.16em', background: ORANGE, color: '#ffffff', fontSize: '0.8rem', minHeight: 'auto' }}
               >
                 {t('nav_join')}
               </Link>

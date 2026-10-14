@@ -8,9 +8,9 @@ const EXP_TYPES = ['ayahuasca', 'vipassana', 'yoga', 'sufismo', 'psilocibina', '
 const MAX_SIZE = 2 * 1024 * 1024
 
 const INPUT_CLASS = 'w-full font-nunito rounded-md px-4 py-3 text-sm outline-none transition-all border text-jungle placeholder-moss/60 focus:border-gold focus:ring-1 focus:ring-gold bg-white'
-const LABEL_CLASS = 'block font-josefin uppercase text-xs tracking-widest text-forest mb-1.5'
+const LABEL_CLASS = 'block font-nunito font-semibold uppercase text-xs text-forest mb-1.5'
 const TEXTAREA_CLASS = INPUT_CLASS + ' resize-none leading-relaxed'
-const SECTION_TITLE = 'font-josefin uppercase text-sm tracking-widest text-forest mb-5 pt-6 border-t border-linen'
+const SECTION_TITLE = 'font-nunito font-semibold uppercase text-sm text-forest mb-5 pt-6 border-t border-linen'
 
 function getInitials(nombre) {
   const parts = (nombre || '?').trim().split(/\s+/)
@@ -208,7 +208,7 @@ export default function Perfil() {
   if (!profile || roleLoading) {
     return (
       <main className="min-h-[60vh] flex items-center justify-center bg-alba">
-        <span className="font-josefin uppercase text-xs tracking-widest text-moss">…</span>
+        <span className="font-nunito font-semibold uppercase text-xs text-moss" style={{ letterSpacing: '0.16em' }}>…</span>
       </main>
     )
   }
@@ -266,7 +266,7 @@ export default function Perfil() {
                   </span>
                 )}
                 <span className="absolute inset-0 flex items-center justify-center bg-jungle/60 opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="font-josefin uppercase text-cream text-xs tracking-widest text-center px-1" style={{ fontSize: '0.55rem' }}>
+                  <span className="font-nunito font-semibold uppercase text-cream text-center px-1" style={{ fontSize: '0.72rem', letterSpacing: '0.16em' }}>
                     {uploading ? t('prof_foto_uploading') : t(displayPhoto ? 'prof_foto_change' : 'prof_foto_upload')}
                   </span>
                 </span>
@@ -332,7 +332,7 @@ export default function Perfil() {
           <div>
             <label className={LABEL_CLASS}>{t('prof_field_rol')}</label>
             <p
-              className="font-josefin uppercase px-4 py-3 rounded-md text-sm border border-linen bg-linen text-forest"
+              className="font-nunito font-semibold uppercase px-4 py-3 rounded-md text-sm border border-linen bg-linen text-forest"
               style={{ letterSpacing: '0.15em' }}
             >
               {t(isSeeker ? 'join_role_seeker' : 'join_role_facilitator')}
@@ -365,7 +365,7 @@ export default function Perfil() {
                         key={type}
                         type="button"
                         onClick={() => toggleQueBusco(type)}
-                        className="font-josefin uppercase py-2.5 px-3 rounded-md text-xs text-left transition-all"
+                        className="font-nunito font-semibold uppercase py-2.5 px-3 rounded-md text-xs text-left transition-all"
                         style={{
                           letterSpacing: '0.15em',
                           background: checked ? '#1A3028' : 'transparent',
@@ -456,8 +456,8 @@ export default function Perfil() {
           <button
             type="submit"
             disabled={saving || uploading || !!fotoError}
-            className="font-josefin uppercase py-4 rounded-md text-cream bg-jungle hover:bg-forest transition-colors disabled:opacity-60"
-            style={{ letterSpacing: '0.25em', fontSize: '0.72rem', minHeight: 'auto' }}
+            className="font-nunito font-semibold uppercase py-4 rounded-md text-cream bg-jungle hover:bg-forest transition-colors disabled:opacity-60"
+            style={{ letterSpacing: '0.16em', fontSize: '0.72rem', minHeight: 'auto' }}
           >
             {uploading
               ? t('prof_foto_uploading')

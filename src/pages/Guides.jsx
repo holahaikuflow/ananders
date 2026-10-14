@@ -9,7 +9,7 @@ export default function Guides() {
   return (
     <main style={{ background: 'var(--an-alba)', minHeight: '100vh' }}>
       <DarkHero eyebrow={t('guides_eyebrow')} title={t('guides_title')}>
-        <p className="font-nunito font-light text-sm leading-relaxed max-w-lg" style={{ color: 'rgba(200,230,215,0.78)' }}>
+        <p className="font-nunito font-light text-sm leading-relaxed max-w-lg" style={{ color: '#BCCABF' }}>
           {t('guides_body')}
         </p>
       </DarkHero>
@@ -31,20 +31,20 @@ export default function Guides() {
       </div>
 
       <div style={{ background: 'var(--an-glow)' }} className="px-5 py-14 text-center">
-        <Eyebrow color="rgba(26,48,40,0.5)">{t('guides_cta_eyebrow')}</Eyebrow>
+        <Eyebrow color="#8A7A3E">{t('guides_cta_eyebrow')}</Eyebrow>
         <h2
           className="font-josefin font-thin mb-3"
           style={{ fontSize: 'clamp(1.5rem, 5vw, 2.2rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1A3028' }}
         >
           {t('guides_cta_title')}
         </h2>
-        <p className="font-nunito font-light text-sm mb-6 max-w-md mx-auto" style={{ color: 'rgba(26,48,40,0.65)' }}>
+        <p className="font-nunito font-light text-sm mb-6 max-w-md mx-auto" style={{ color: '#4C5A4E' }}>
           {t('guides_cta_body')}
         </p>
         <Link
           to="/for-guides"
-          className="font-josefin uppercase px-7 py-3.5 rounded-md"
-          style={{ letterSpacing: '0.3em', background: '#1A3028', color: '#F0E498', fontSize: '0.7rem', fontWeight: 400, minHeight: 'auto' }}
+          className="font-nunito font-semibold uppercase px-7 py-3.5 rounded-md"
+          style={{ letterSpacing: '0.16em', background: '#1A3028', color: '#F0E498', fontSize: '0.72rem', minHeight: 'auto' }}
         >
           {t('guides_cta_btn')}
         </Link>

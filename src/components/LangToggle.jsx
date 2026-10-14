@@ -10,15 +10,14 @@ export default function LangToggle() {
           key={code}
           onClick={() => setLang(code)}
           aria-pressed={lang === code}
-          className="font-josefin uppercase px-2.5 py-1.5 transition-all"
+          className="font-nunito font-semibold uppercase px-2.5 py-1.5 transition-all"
           style={{
-            letterSpacing: '0.18em',
-            fontSize: '0.62rem',
+            letterSpacing: '0.16em',
+            fontSize: '0.72rem',
             minHeight: 'auto',
-            color: lang === code ? '#ffffff' : '#6B6B6B',
+            color: lang === code ? '#ffffff' : '#4C5A4E',
             background: lang === code ? ORANGE : 'transparent',
             borderRight: i === 0 ? '0.5px solid rgba(232,98,10,0.2)' : 'none',
-            fontWeight: lang === code ? 400 : 300,
           }}
         >
           {code.toUpperCase()}

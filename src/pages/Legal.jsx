@@ -69,7 +69,7 @@ export default function Legal({ doc }) {
     <main style={{ background: 'var(--an-alba)', minHeight: '100vh' }}>
       <div style={{ background: 'var(--an-night)' }} className="px-6 md:px-10 py-16">
         <div className="max-w-3xl mx-auto">
-          <Eyebrow color="rgba(200,168,50,0.5)">{t('legal_eyebrow')}</Eyebrow>
+          <Eyebrow color="#C8A832">{t('legal_eyebrow')}</Eyebrow>
           <h1
             className="font-josefin font-thin"
             style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--an-cream)' }}
@@ -99,10 +99,10 @@ export default function Legal({ doc }) {
           </Section>
         ))}
         <div className="flex gap-6 flex-wrap" style={{ borderTop: '0.5px solid rgba(45,82,66,0.12)', paddingTop: '32px', marginTop: '8px' }}>
-          <Link to={d.other.to} className="font-josefin text-xs uppercase" style={{ letterSpacing: '0.25em', color: '#3D6154', textDecoration: 'underline', minHeight: 'auto' }}>
+          <Link to={d.other.to} className="font-nunito font-semibold text-xs uppercase" style={{ letterSpacing: '0.16em', color: '#3D6154', textDecoration: 'underline', minHeight: 'auto' }}>
             {t('footer_legal')[d.other.label]}
           </Link>
-          <Link to="/" className="font-josefin text-xs uppercase" style={{ letterSpacing: '0.25em', color: '#3D6154', textDecoration: 'underline', minHeight: 'auto' }}>
+          <Link to="/" className="font-nunito font-semibold text-xs uppercase" style={{ letterSpacing: '0.16em', color: '#3D6154', textDecoration: 'underline', minHeight: 'auto' }}>
             ← {t('notfound_home')}
           </Link>
         </div>

@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useLang()
   const cols = t('footer_cols')
   const legal = t('footer_legal').slice(0, LEGAL_ROUTES.length)
-  const dim = 'rgba(255,255,255,0.25)'
+  const dim = '#BCCABF'
 
   return (
     <footer style={{ background: '#111111' }} className="px-6 md:px-12 pt-14 pb-7">
@@ -21,12 +21,12 @@ export default function Footer() {
         >
           <Logo dark={false} size="footer" />
           <p
-            className="font-josefin text-xs mt-3 mb-4"
-            style={{ letterSpacing: '0.35em', textTransform: 'uppercase', color: 'rgba(232,98,10,0.45)', fontWeight: 300 }}
+            className="font-nunito font-semibold mt-3 mb-4"
+            style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832' }}
           >
             {t('footer_tagline')}
           </p>
-          <p className="font-nunito font-light text-xs leading-relaxed max-w-xs" style={{ color: 'rgba(255,255,255,0.28)' }}>
+          <p className="font-nunito font-light text-xs leading-relaxed max-w-xs" style={{ color: '#BCCABF' }}>
             {t('footer_desc')}
           </p>
         </div>
@@ -35,8 +35,8 @@ export default function Footer() {
           {cols.map((col) => (
             <div key={col.title}>
               <p
-                className="font-josefin text-xs mb-4"
-                style={{ letterSpacing: '0.38em', textTransform: 'uppercase', color: 'rgba(232,98,10,0.4)', fontWeight: 400 }}
+                className="font-nunito font-semibold mb-4"
+                style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832' }}
               >
                 {col.title}
               </p>
@@ -61,8 +61,8 @@ export default function Footer() {
           style={{ borderTop: '0.5px solid rgba(232,98,10,0.1)', paddingTop: '20px' }}
         >
           <span
-            className="font-josefin text-xs"
-            style={{ letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.15)' }}
+            className="font-nunito font-semibold"
+            style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7E9488' }}
           >
             © {new Date().getFullYear()} Ananders · {t('footer_copy')}
           </span>
@@ -71,8 +71,8 @@ export default function Footer() {
               <Link
                 key={label}
                 to={LEGAL_ROUTES[i]}
-                className="font-josefin text-xs transition-colors hover:!text-white/40"
-                style={{ letterSpacing: '0.2em', color: 'rgba(255,255,255,0.15)', minHeight: 'auto' }}
+                className="font-nunito font-semibold transition-colors hover:!text-white/40"
+                style={{ fontSize: '0.72rem', letterSpacing: '0.16em', color: '#7E9488', minHeight: 'auto' }}
               >
                 {label}
               </Link>

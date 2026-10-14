@@ -12,7 +12,7 @@ export default function Membership() {
     <main>
       <section style={{ background: '#1A3028' }} className="px-5 md:px-10 py-20 md:py-28 flex flex-col items-center text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <Eyebrow color="rgba(200,168,50,0.65)" spacing="0.55em" className="mb-4">
+          <Eyebrow color="#C8A832" className="mb-4">
             {t('an_eyebrow')}
           </Eyebrow>
           <h1
@@ -24,8 +24,8 @@ export default function Membership() {
           <StarMark size={64} className="mb-8" />
           <Link
             to="/join"
-            className="font-josefin uppercase px-8 py-4 rounded-md"
-            style={{ letterSpacing: '0.32em', background: '#C8A832', color: '#1A3028', fontWeight: 400, fontSize: '0.72rem', minHeight: 'auto' }}
+            className="font-nunito font-semibold uppercase px-8 py-4 rounded-md"
+            style={{ letterSpacing: '0.16em', background: '#C2510A', color: '#FFFFFF', fontSize: '0.72rem', minHeight: 'auto' }}
           >
             {t('an_hero_cta')}
           </Link>
@@ -41,7 +41,7 @@ export default function Membership() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {t('an_who_cards').map((c, i) => (
               <div key={c.title} className="p-6 rounded-xl" style={card}>
-                <div className="font-josefin font-thin text-4xl mb-4" style={{ color: 'rgba(200,168,50,0.2)', letterSpacing: '0.05em' }}>
+                <div className="font-josefin font-thin text-4xl mb-4" style={{ color: '#2D5242', letterSpacing: '0.05em' }}>
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <h3 className="font-josefin text-sm mb-3" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: '#1A3028', fontWeight: 400 }}>
@@ -54,7 +54,7 @@ export default function Membership() {
             ))}
           </div>
           <div className="text-center px-5 py-10 rounded-xl" style={{ background: '#1A3028' }}>
-            <p className="font-nunito font-extralight text-base md:text-lg italic leading-relaxed mx-auto" style={{ color: 'rgba(240,228,152,0.75)', maxWidth: '560px' }}>
+            <p className="font-nunito font-extralight text-base md:text-lg italic leading-relaxed mx-auto" style={{ color: '#BCCABF', maxWidth: '560px' }}>
               {t('an_who_quote')}
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function Membership() {
               <div key={item.title} className="flex gap-4 items-start px-4 py-4 rounded-xl" style={{ ...card, boxShadow: '0 1px 8px rgba(26,48,40,0.04)' }}>
                 <span style={{ color: '#C8A832', flexShrink: 0, fontSize: '0.9rem', marginTop: '1px' }}>→</span>
                 <div>
-                  <p className="font-josefin text-xs mb-1" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: '#1A3028', fontWeight: 400 }}>
+                  <p className="font-nunito font-semibold text-xs mb-1" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: '#1A3028' }}>
                     {item.title}
                   </p>
                   <p className="font-nunito font-light text-xs leading-relaxed" style={{ color: '#3D6154' }}>
@@ -109,15 +109,15 @@ export default function Membership() {
               <ul className="flex flex-col gap-2 mb-4">
                 {t('plan_explorer_items').map(([mark, label, included]) => (
                   <li key={label} className="flex gap-2.5 items-start">
-                    <span style={{ color: included ? '#4A7560' : 'rgba(45,82,66,0.25)', fontSize: '0.7rem', marginTop: '1px' }}>{mark}</span>
-                    <span className="font-nunito font-light text-xs" style={{ color: included ? '#2D5242' : 'rgba(45,82,66,0.35)' }}>{label}</span>
+                    <span style={{ color: included ? '#4A7560' : '#6F7F70', fontSize: '0.7rem', marginTop: '1px' }}>{mark}</span>
+                    <span className="font-nunito font-light text-xs" style={{ color: included ? '#2D5242' : '#6F7F70' }}>{label}</span>
                   </li>
                 ))}
               </ul>
               <Link
                 to="/join"
-                className="w-full text-center font-josefin uppercase py-2.5 rounded-md"
-                style={{ letterSpacing: '0.28em', border: '0.5px solid rgba(45,82,66,0.25)', color: '#2D5242', fontSize: '0.65rem', fontWeight: 400, minHeight: 'auto' }}
+                className="w-full text-center font-nunito font-semibold uppercase py-2.5 rounded-md"
+                style={{ letterSpacing: '0.16em', border: '0.5px solid rgba(45,82,66,0.25)', color: '#2D5242', fontSize: '0.72rem', minHeight: 'auto' }}
               >
                 {t('plan_explorer_cta')}
               </Link>
@@ -125,8 +125,8 @@ export default function Membership() {
 
             <div className="p-5 rounded-xl" style={{ border: '1.5px solid #2D5242', background: 'rgba(45,82,66,0.03)' }}>
               <span
-                className="font-josefin px-2.5 py-1 rounded-sm mb-3 inline-block"
-                style={{ fontSize: '0.58rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: '#C8A832', background: 'rgba(200,168,50,0.1)', fontWeight: 400 }}
+                className="font-nunito font-semibold px-2.5 py-1 rounded-sm mb-3 inline-block"
+                style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832', background: 'rgba(200,168,50,0.1)' }}
               >
                 {t('plan_anander_badge')}
               </span>
@@ -149,20 +149,20 @@ export default function Membership() {
               </ul>
               <Link
                 to="/join"
-                className="w-full text-center font-josefin uppercase py-3 rounded-md"
-                style={{ letterSpacing: '0.28em', background: '#2D5242', color: '#F0E498', fontSize: '0.68rem', fontWeight: 400, minHeight: 'auto' }}
+                className="w-full text-center font-nunito font-semibold uppercase py-3 rounded-md"
+                style={{ letterSpacing: '0.16em', background: '#2D5242', color: '#F0E498', fontSize: '0.72rem', minHeight: 'auto' }}
               >
                 {t('plan_anander_cta')}
               </Link>
             </div>
 
             <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-lg" style={{ border: '0.5px dashed rgba(45,82,66,0.2)' }}>
-              <span className="font-josefin" style={{ fontSize: '0.62rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(45,82,66,0.4)', fontWeight: 300 }}>
+              <span className="font-nunito font-semibold" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#6F7F70' }}>
                 {t('plan_pro_label')}
               </span>
               <span
-                className="font-josefin px-2.5 py-1 rounded-full flex-shrink-0"
-                style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(45,82,66,0.3)', border: '0.5px solid rgba(45,82,66,0.15)' }}
+                className="font-nunito font-semibold px-2.5 py-1 rounded-full flex-shrink-0"
+                style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#6F7F70', border: '0.5px solid rgba(45,82,66,0.15)' }}
               >
                 {t('plan_pro_badge')}
               </span>
@@ -173,28 +173,28 @@ export default function Membership() {
 
       <section style={{ background: '#2D5242' }} className="px-5 md:px-10 py-16 md:py-20 text-center">
         <div className="max-w-2xl mx-auto">
-          <Eyebrow color="rgba(240,228,152,0.5)" className="mb-4">{t('an_community_eyebrow')}</Eyebrow>
+          <Eyebrow color="#C8A832" className="mb-4">{t('an_community_eyebrow')}</Eyebrow>
           <h2
             className="font-josefin font-thin mb-5"
             style={{ fontSize: 'clamp(1.6rem, 5vw, 2.8rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#F5F0D8', lineHeight: 1.2 }}
           >
             <Lines text={t('an_community_title')} />
           </h2>
-          <p className="font-nunito font-light text-sm leading-relaxed mb-8 max-w-md mx-auto" style={{ color: 'rgba(200,230,215,0.72)' }}>
+          <p className="font-nunito font-light text-sm leading-relaxed mb-8 max-w-md mx-auto" style={{ color: '#BCCABF' }}>
             {t('an_community_body')}
           </p>
           <div className="flex gap-3 flex-wrap justify-center">
             <Link
               to="/join"
-              className="font-josefin uppercase px-7 py-4 rounded-md"
-              style={{ letterSpacing: '0.32em', background: 'var(--an-glow)', color: '#1A3028', fontWeight: 400, fontSize: '0.7rem', minHeight: 'auto' }}
+              className="font-nunito font-semibold uppercase px-7 py-4 rounded-md"
+              style={{ letterSpacing: '0.16em', background: 'var(--an-glow)', color: '#1A3028', fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('an_hero_cta')}
             </Link>
             <Link
               to="/explore"
-              className="font-josefin uppercase px-7 py-4 rounded-md"
-              style={{ letterSpacing: '0.3em', border: '0.5px solid rgba(240,228,152,0.3)', color: '#F0E498', fontWeight: 300, fontSize: '0.68rem', minHeight: 'auto' }}
+              className="font-nunito font-semibold uppercase px-7 py-4 rounded-md"
+              style={{ letterSpacing: '0.16em', border: '0.5px solid rgba(240,228,152,0.3)', color: '#F0E498', fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('nav_explore')} →
             </Link>

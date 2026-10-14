@@ -79,6 +79,10 @@ Los mensajes son además **inmutables**: no hay policy de `UPDATE` ni de `DELETE
 
 El facilitador puede cambiar el `estado` de una postulación, pero no el `mensaje_inicial` del buscador. Esto lo garantiza un trigger `BEFORE UPDATE` que lanza una excepción si se intenta modificar cualquier columna fuera de `estado`. El trigger actúa a nivel de base de datos, independientemente de la policy de RLS.
 
+## Convenciones de diseño
+
+**Contraste de texto:** ningún texto usa `rgba()` con alpha menor a 1 ni la utilidad `opacity`. La jerarquía se consigue con tamaño, peso, `letter-spacing` y espacio en blanco. Para texto atenuado se usan colores sólidos de la escala definida en `tailwind.config.js`: `ink / body / meta / dim` sobre fondos claros; `parchment / muted / ghost` sobre fondos oscuros; `ochre / gold` para eyebrows. La opacidad solo se usa en overlays, sombras y bordes decorativos.
+
 ## Pendiente
 
 - Imágenes en `public/images/` (mientras falten se muestra un degradado):

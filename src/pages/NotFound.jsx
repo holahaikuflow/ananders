@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center text-center px-6" style={{ background: '#111111' }}>
       <StarMark size={48} className="mb-8" style={{ opacity: 0.4 }} />
-      <p className="font-josefin mb-3" style={{ fontSize: '0.6rem', letterSpacing: '0.5em', textTransform: 'uppercase', color: 'rgba(232,98,10,0.6)' }}>
+      <p className="font-nunito font-semibold mb-3" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#E8620A' }}>
         Ananders · 404 · {t('notfound_eyebrow')}
       </p>
       <h1
@@ -17,21 +17,21 @@ export default function NotFound() {
       >
         <Lines text={t('notfound_title')} />
       </h1>
-      <p className="font-nunito font-light text-sm italic mb-8" style={{ color: 'rgba(255,255,255,0.4)', maxWidth: '360px', lineHeight: 1.7 }}>
+      <p className="font-nunito font-light text-sm italic mb-8" style={{ color: '#93A796', maxWidth: '360px', lineHeight: 1.7 }}>
         {t('notfound_body')}
       </p>
       <div className="flex gap-3 flex-wrap justify-center">
         <Link
           to="/"
-          className="font-josefin uppercase px-6 py-3 rounded-md"
-          style={{ letterSpacing: '0.28em', background: '#E8620A', color: '#ffffff', fontSize: '0.7rem', minHeight: 'auto' }}
+          className="font-nunito font-semibold uppercase px-6 py-3 rounded-md"
+          style={{ letterSpacing: '0.16em', background: '#C2510A', color: '#ffffff', fontSize: '0.72rem', minHeight: 'auto' }}
         >
           {t('notfound_home')}
         </Link>
         <Link
           to="/explore"
-          className="font-josefin uppercase px-6 py-3 rounded-md"
-          style={{ letterSpacing: '0.28em', border: '0.5px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)', fontSize: '0.7rem', minHeight: 'auto' }}
+          className="font-nunito font-semibold uppercase px-6 py-3 rounded-md"
+          style={{ letterSpacing: '0.16em', border: '0.5px solid rgba(255,255,255,0.25)', color: '#F4EFE1', fontSize: '0.72rem', minHeight: 'auto' }}
         >
           {t('notfound_explore')}
         </Link>

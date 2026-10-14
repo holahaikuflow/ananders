@@ -10,7 +10,7 @@ const MODALITIES = ['voluntariado', 'pago', 'ambas']
 const FORMATS = ['con_fecha', 'permanente']
 
 const INPUT = 'w-full font-nunito rounded-md px-4 py-3 text-sm outline-none transition-all border text-jungle placeholder-moss/60 focus:border-gold focus:ring-1 focus:ring-gold bg-white'
-const LABEL = 'block font-josefin uppercase text-xs tracking-widest text-forest mb-1.5'
+const LABEL = 'block font-nunito font-semibold uppercase text-xs text-forest mb-1.5'
 const TEXTAREA = INPUT + ' resize-none leading-relaxed'
 
 const STATUS_COLORS = {
@@ -61,8 +61,8 @@ function ExpCard({ exp, t, appCount, onEdit, onTogglePublish, onViewApps, toggli
           </p>
         </div>
         <span
-          className="flex-shrink-0 font-josefin uppercase text-xs px-2.5 py-1 rounded-full"
-          style={{ letterSpacing: '0.15em', fontSize: '0.6rem', background: isPublished ? '#1A3028' : '#F4F1EA', color: isPublished ? '#F5F0D8' : '#5C8A72' }}
+          className="flex-shrink-0 font-nunito font-semibold uppercase text-xs px-2.5 py-1 rounded-full"
+          style={{ letterSpacing: '0.15em', fontSize: '0.72rem', background: isPublished ? '#1A3028' : '#F4F1EA', color: isPublished ? '#F5F0D8' : '#5C8A72' }}
         >
           {t(isPublished ? 'exp_list_published_label' : 'exp_list_draft_label')}
         </span>
@@ -76,7 +76,7 @@ function ExpCard({ exp, t, appCount, onEdit, onTogglePublish, onViewApps, toggli
         <button
           type="button"
           onClick={() => onEdit(exp)}
-          className="font-josefin uppercase text-xs transition-colors text-forest hover:text-jungle"
+          className="font-nunito font-semibold uppercase text-xs transition-colors text-forest hover:text-jungle"
           style={{ letterSpacing: '0.2em', minHeight: 'auto' }}
         >
           {t('exp_list_edit')}
@@ -86,8 +86,8 @@ function ExpCard({ exp, t, appCount, onEdit, onTogglePublish, onViewApps, toggli
           type="button"
           onClick={() => onTogglePublish(exp)}
           disabled={toggling === exp.id}
-          className="font-josefin uppercase text-xs transition-colors disabled:opacity-50"
-          style={{ letterSpacing: '0.2em', minHeight: 'auto', color: isPublished ? '#E8620A' : '#1A3028' }}
+          className="font-nunito font-semibold uppercase text-xs transition-colors disabled:opacity-50"
+          style={{ letterSpacing: '0.16em', minHeight: 'auto', color: isPublished ? '#E8620A' : '#1A3028' }}
         >
           {toggling === exp.id ? '…' : t(isPublished ? 'exp_list_unpublish' : 'exp_list_publish')}
         </button>
@@ -95,9 +95,9 @@ function ExpCard({ exp, t, appCount, onEdit, onTogglePublish, onViewApps, toggli
         <button
           type="button"
           onClick={() => onViewApps(exp)}
-          className="font-josefin uppercase text-xs transition-colors"
+          className="font-nunito font-semibold uppercase text-xs transition-colors"
           style={{
-            letterSpacing: '0.2em',
+            letterSpacing: '0.16em',
             minHeight: 'auto',
             color: appCount > 0 ? '#C8A832' : '#9FB8A8',
           }}
@@ -120,8 +120,8 @@ function ApplicationsView({ t, exp, applications, appsLoading, updatingApp, onUp
         <button
           type="button"
           onClick={onBack}
-          className="font-josefin uppercase text-xs text-moss hover:text-jungle transition-colors mb-4"
-          style={{ letterSpacing: '0.2em', minHeight: 'auto' }}
+          className="font-nunito font-semibold uppercase text-xs text-moss hover:text-jungle transition-colors mb-4"
+          style={{ letterSpacing: '0.16em', minHeight: 'auto' }}
         >
           {t('exp_apps_back')}
         </button>
@@ -154,15 +154,15 @@ function ApplicationsView({ t, exp, applications, appsLoading, updatingApp, onUp
                     {seekerName}
                   </p>
                   <span
-                    className="flex-shrink-0 font-josefin uppercase px-2.5 py-1 rounded-full"
-                    style={{ letterSpacing: '0.15em', fontSize: '0.6rem', background: colors.bg, color: colors.color }}
+                    className="flex-shrink-0 font-nunito font-semibold uppercase px-2.5 py-1 rounded-full"
+                    style={{ letterSpacing: '0.15em', fontSize: '0.72rem', background: colors.bg, color: colors.color }}
                   >
                     {t(`apply_status_${app.estado}`)}
                   </span>
                 </div>
 
                 <div>
-                  <p className="font-josefin uppercase text-moss mb-1" style={{ letterSpacing: '0.2em', fontSize: '0.58rem' }}>
+                  <p className="font-nunito font-semibold uppercase text-moss mb-1" style={{ letterSpacing: '0.16em', fontSize: '0.72rem' }}>
                     {t('exp_apps_message')}
                   </p>
                   <p className="font-nunito text-sm text-jungle/80 leading-relaxed whitespace-pre-wrap">
@@ -177,8 +177,8 @@ function ApplicationsView({ t, exp, applications, appsLoading, updatingApp, onUp
                         type="button"
                         disabled={updatingApp === app.id}
                         onClick={() => onUpdateStatus(app.id, 'aceptada')}
-                        className="font-josefin uppercase text-xs transition-colors disabled:opacity-50"
-                        style={{ letterSpacing: '0.2em', minHeight: 'auto', color: '#1A6B3C' }}
+                        className="font-nunito font-semibold uppercase text-xs transition-colors disabled:opacity-50"
+                        style={{ letterSpacing: '0.16em', minHeight: 'auto', color: '#1A6B3C' }}
                       >
                         {updatingApp === app.id ? t('exp_apps_updating') : t('exp_apps_accept')}
                       </button>
@@ -188,8 +188,8 @@ function ApplicationsView({ t, exp, applications, appsLoading, updatingApp, onUp
                       type="button"
                       disabled={updatingApp === app.id}
                       onClick={() => onUpdateStatus(app.id, 'rechazada')}
-                      className="font-josefin uppercase text-xs transition-colors disabled:opacity-50"
-                      style={{ letterSpacing: '0.2em', minHeight: 'auto', color: '#C84A1A' }}
+                      className="font-nunito font-semibold uppercase text-xs transition-colors disabled:opacity-50"
+                      style={{ letterSpacing: '0.16em', minHeight: 'auto', color: '#C84A1A' }}
                     >
                       {updatingApp === app.id ? t('exp_apps_updating') : t('exp_apps_reject')}
                     </button>
@@ -198,8 +198,8 @@ function ApplicationsView({ t, exp, applications, appsLoading, updatingApp, onUp
                 <div className="pt-2 border-t border-linen">
                   <Link
                     to={`/postulacion/${app.id}`}
-                    className="font-josefin uppercase text-xs transition-colors"
-                    style={{ letterSpacing: '0.2em', color: '#E8620A' }}
+                    className="font-nunito font-semibold uppercase text-xs transition-colors"
+                    style={{ letterSpacing: '0.16em', color: '#E8620A' }}
                   >
                     {t('chat_open')}
                   </Link>
@@ -325,7 +325,7 @@ function ExpForm({ t, initial, onSave, onCancel }) {
               key={v}
               type="button"
               onClick={() => { setForm((p) => ({ ...p, formato: v })); setErrors((p) => ({ ...p, formato: '' })) }}
-              className="font-josefin uppercase py-3 rounded-md text-xs transition-all"
+              className="font-nunito font-semibold uppercase py-3 rounded-md text-xs transition-all"
               style={{ letterSpacing: '0.15em', background: form.formato === v ? '#1A3028' : 'transparent', color: form.formato === v ? '#F5F0D8' : '#2D5242', border: form.formato === v ? '1.5px solid #1A3028' : '1.5px solid #C8D8C0' }}
             >
               {t(`exp_fmt_${v}`)}
@@ -389,10 +389,10 @@ function ExpForm({ t, initial, onSave, onCancel }) {
       {saved && <p className="font-nunito text-sm text-forest text-center py-2 px-4 rounded-md bg-moss/10">{t('exp_form_saved')}</p>}
 
       <div className="flex gap-3">
-        <button type="button" onClick={onCancel} className="flex-1 font-josefin uppercase py-3.5 rounded-md border border-linen text-forest hover:border-moss transition-colors" style={{ letterSpacing: '0.25em', fontSize: '0.72rem', minHeight: 'auto' }}>
+        <button type="button" onClick={onCancel} className="flex-1 font-nunito font-semibold uppercase py-3.5 rounded-md border border-linen text-forest hover:border-moss transition-colors" style={{ letterSpacing: '0.16em', fontSize: '0.72rem', minHeight: 'auto' }}>
           {t('exp_form_cancel')}
         </button>
-        <button type="submit" disabled={saving} className="flex-1 font-josefin uppercase py-3.5 rounded-md text-cream bg-jungle hover:bg-forest transition-colors disabled:opacity-60" style={{ letterSpacing: '0.25em', fontSize: '0.72rem', minHeight: 'auto' }}>
+        <button type="submit" disabled={saving} className="flex-1 font-nunito font-semibold uppercase py-3.5 rounded-md text-cream bg-jungle hover:bg-forest transition-colors disabled:opacity-60" style={{ letterSpacing: '0.16em', fontSize: '0.72rem', minHeight: 'auto' }}>
           {saving ? t('exp_form_saving') : t('exp_form_save')}
         </button>
       </div>
@@ -462,7 +462,7 @@ export default function MisExperiencias() {
           {t('exp_seeker_denied_title')}
         </h2>
         <p className="font-nunito text-cream/70 max-w-sm mb-8">{t('exp_seeker_denied_body')}</p>
-        <Link to="/explore" className="font-josefin uppercase px-7 py-3.5 rounded-md bg-gold text-jungle text-xs tracking-widest">
+        <Link to="/explore" className="font-nunito font-semibold uppercase px-7 py-3.5 rounded-md bg-cta text-white text-xs" style={{ letterSpacing: '0.16em' }}>
           {t('nav_explore')}
         </Link>
       </main>
@@ -526,8 +526,8 @@ export default function MisExperiencias() {
             <button
               type="button"
               onClick={startCreate}
-              className="flex-shrink-0 font-josefin uppercase px-5 py-3 rounded-md text-cream bg-jungle hover:bg-forest transition-colors mt-1"
-              style={{ letterSpacing: '0.2em', fontSize: '0.68rem', minHeight: 'auto' }}
+              className="flex-shrink-0 font-nunito font-semibold uppercase px-5 py-3 rounded-md text-cream bg-jungle hover:bg-forest transition-colors mt-1"
+              style={{ letterSpacing: '0.16em', fontSize: '0.72rem', minHeight: 'auto' }}
             >
               {t('exp_list_create')}
             </button>
@@ -552,7 +552,7 @@ export default function MisExperiencias() {
           <div className="flex flex-col items-center text-center py-16 gap-4">
             <p className="font-josefin uppercase text-jungle" style={{ letterSpacing: '0.1em', fontSize: '1rem' }}>{t('exp_list_empty_title')}</p>
             <p className="font-nunito text-sm text-moss max-w-xs">{t('exp_list_empty_body')}</p>
-            <button type="button" onClick={startCreate} className="font-josefin uppercase mt-2 px-6 py-3 rounded-md bg-gold text-jungle text-xs tracking-widest hover:bg-dew transition-colors" style={{ minHeight: 'auto' }}>
+            <button type="button" onClick={startCreate} className="font-nunito font-semibold uppercase mt-2 px-6 py-3 rounded-md bg-cta text-white text-xs hover:bg-cta/90 transition-colors" style={{ letterSpacing: '0.16em', minHeight: 'auto' }}>
               {t('exp_list_create')}
             </button>
           </div>

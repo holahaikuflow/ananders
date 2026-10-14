@@ -37,8 +37,8 @@ export default function HeroSearch() {
         {fields.map((f, i) => (
           <label key={f.label} className="block px-4 py-3" style={{ borderBottom: i < 2 ? '0.5px solid rgba(200,168,50,0.1)' : 'none' }}>
             <span
-              className="block font-josefin mb-1.5"
-              style={{ fontSize: '0.58rem', letterSpacing: '0.35em', textTransform: 'uppercase', color: '#C8A832', fontWeight: 400 }}
+              className="block font-nunito font-semibold mb-1.5"
+              style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#C8A832' }}
             >
               {f.label}
             </span>
@@ -71,16 +71,15 @@ export default function HeroSearch() {
                 key={tag}
                 onClick={() => setExperience((v) => (v === tag ? '' : tag))}
                 aria-pressed={active}
-                className="font-josefin px-2.5 py-1 rounded-full transition-all"
+                className="font-nunito font-semibold px-2.5 py-1 rounded-full transition-all"
                 style={{
-                  fontSize: '0.58rem',
+                  fontSize: '0.72rem',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   minHeight: 'auto',
                   border: '0.5px solid rgba(92,138,114,0.4)',
                   color: active ? '#2D5242' : '#4A7560',
                   background: active ? 'var(--an-linen)' : 'transparent',
-                  fontWeight: active ? 400 : 300,
                 }}
               >
                 {tag}
@@ -90,8 +89,8 @@ export default function HeroSearch() {
         </div>
         <button
           onClick={search}
-          className="font-josefin uppercase px-4 py-2 rounded-md flex-shrink-0"
-          style={{ letterSpacing: '0.25em', background: 'var(--an-jungle)', color: 'var(--an-dew)', minHeight: 'auto', fontSize: '0.65rem', fontWeight: 400 }}
+          className="font-nunito font-semibold uppercase px-4 py-2 rounded-md flex-shrink-0"
+          style={{ letterSpacing: '0.16em', background: 'var(--an-jungle)', color: 'var(--an-dew)', minHeight: 'auto', fontSize: '0.72rem' }}
         >
           {t('search_btn')}
         </button>

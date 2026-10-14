@@ -9,20 +9,20 @@ export default function ComingSoon({ eyebrowKey, titleKey }) {
   return (
     <main className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 py-20" style={{ background: '#1A3028' }}>
       <StarMark size={40} className="mb-6" style={{ opacity: 0.6 }} />
-      <Eyebrow color="rgba(200,168,50,0.65)">{t(eyebrowKey)}</Eyebrow>
+      <Eyebrow color="#C8A832">{t(eyebrowKey)}</Eyebrow>
       <h1
         className="font-josefin font-thin mb-6"
         style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#F5F0D8', lineHeight: 1.15 }}
       >
         {t(titleKey)}
       </h1>
-      <p className="font-josefin uppercase mb-8" style={{ fontSize: '0.7rem', letterSpacing: '0.35em', color: '#F0E498' }}>
+      <p className="font-nunito font-semibold uppercase mb-8" style={{ fontSize: '0.72rem', letterSpacing: '0.16em', color: '#F0E498' }}>
         {t('coming_soon')}
       </p>
       <Link
         to="/explore"
-        className="font-josefin uppercase px-7 py-3.5 rounded-md"
-        style={{ letterSpacing: '0.3em', background: '#C8A832', color: '#1A3028', fontSize: '0.7rem', fontWeight: 400, minHeight: 'auto' }}
+        className="font-nunito font-semibold uppercase px-7 py-3.5 rounded-md"
+        style={{ letterSpacing: '0.16em', background: '#C2510A', color: '#FFFFFF', fontSize: '0.72rem', minHeight: 'auto' }}
       >
         {t('notfound_explore')}
       </Link>

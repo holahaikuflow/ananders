@@ -8,14 +8,14 @@ export default function Safety() {
     <main style={{ background: 'var(--an-alba)', minHeight: '100vh' }}>
       <div style={{ background: 'var(--an-night)' }} className="px-5 md:px-10 py-16">
         <div className="max-w-3xl mx-auto">
-          <Eyebrow color="rgba(200,168,50,0.5)">{t('about_safety_eyebrow')}</Eyebrow>
+          <Eyebrow color="#C8A832">{t('about_safety_eyebrow')}</Eyebrow>
           <h1
             className="font-josefin font-thin mb-4"
             style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--an-cream)', lineHeight: 1.1 }}
           >
             {t('about_safety_title')}
           </h1>
-          <p className="font-nunito font-light text-sm leading-relaxed" style={{ color: 'rgba(200,230,215,0.7)', maxWidth: '520px' }}>
+          <p className="font-nunito font-light text-sm leading-relaxed" style={{ color: '#BCCABF', maxWidth: '520px' }}>
             {t('about_safety_body')}
           </p>
         </div>
@@ -24,10 +24,10 @@ export default function Safety() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {t('about_safety_steps').map((s) => (
             <div key={s.n} className="p-5 rounded-xl text-center" style={{ border: '0.5px solid rgba(45,82,66,0.12)', background: 'white' }}>
-              <div className="font-josefin font-thin text-3xl mb-2" style={{ color: 'rgba(200,168,50,0.35)', letterSpacing: '0.05em' }}>
+              <div className="font-josefin font-thin text-3xl mb-2" style={{ color: '#2D5242', letterSpacing: '0.05em' }}>
                 {s.n}
               </div>
-              <h3 className="font-josefin text-xs mb-2" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--an-night)', fontWeight: 400 }}>
+              <h3 className="font-nunito font-semibold text-xs mb-2" style={{ letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--an-night)' }}>
                 {s.title}
               </h3>
               <p className="font-nunito font-light text-xs leading-relaxed" style={{ color: 'var(--an-moss)' }}>
@@ -44,10 +44,10 @@ export default function Safety() {
           </p>
         </div>
         <div className="flex flex-wrap gap-6 pt-4" style={{ borderTop: '0.5px solid rgba(45,82,66,0.1)' }}>
-          <Link to="/about" className="font-josefin text-xs uppercase" style={{ letterSpacing: '0.25em', color: 'var(--an-moss)', textDecoration: 'underline', minHeight: 'auto' }}>
+          <Link to="/about" className="font-nunito font-semibold text-xs uppercase" style={{ letterSpacing: '0.16em', color: 'var(--an-moss)', textDecoration: 'underline', minHeight: 'auto' }}>
             {t('nav_about')}
           </Link>
-          <Link to="/for-guides" className="font-josefin text-xs uppercase" style={{ letterSpacing: '0.25em', color: 'var(--an-moss)', textDecoration: 'underline', minHeight: 'auto' }}>
+          <Link to="/for-guides" className="font-nunito font-semibold text-xs uppercase" style={{ letterSpacing: '0.16em', color: 'var(--an-moss)', textDecoration: 'underline', minHeight: 'auto' }}>
             {t('fg_eyebrow')}
           </Link>
         </div>
