@@ -13,6 +13,13 @@ import About from './pages/About'
 import Safety from './pages/Safety'
 import Legal from './pages/Legal'
 import ComingSoon from './pages/ComingSoon'
+import Join from './pages/Join'
+import Login from './pages/Login'
+import Perfil from './pages/Perfil'
+import MisExperiencias from './pages/MisExperiencias'
+import MisPostulaciones from './pages/MisPostulaciones'
+import PostulacionChat from './pages/PostulacionChat'
+import ProtectedRoute from './components/ProtectedRoute'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -37,8 +44,12 @@ export default function App() {
         <Route path="/safety" element={<Safety />} />
         <Route path="/privacy" element={<Legal doc="privacy" />} />
         <Route path="/terms" element={<Legal doc="terms" />} />
-        <Route path="/join" element={<ComingSoon eyebrowKey="join_eyebrow_account" titleKey="join_title_plan" />} />
-        <Route path="/login" element={<ComingSoon eyebrowKey="login_eyebrow" titleKey="login_title" />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/perfil" element={<ProtectedRoute><Perfil /></ProtectedRoute>} />
+        <Route path="/mis-experiencias" element={<ProtectedRoute><MisExperiencias /></ProtectedRoute>} />
+        <Route path="/mis-postulaciones" element={<ProtectedRoute><MisPostulaciones /></ProtectedRoute>} />
+        <Route path="/postulacion/:id" element={<ProtectedRoute><PostulacionChat /></ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
