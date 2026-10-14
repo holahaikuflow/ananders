@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta Ananders. Ver ANANDERS-EXTRAIDO.md §2 (las marcadas como inferidas reemplazan valores perdidos). */
+:root {
+  --an-orange: #E8620A;
+  --an-black: #1A1A1A;
+  --an-dark: #2A2A2A;
+  --an-gray: #6B6B6B;
+  --an-mist: #A8A8A8;
+  --an-linen: #F4F1EA;
+  --an-alba: #FAFAF8;
+  --an-white: #FFFFFF;
+  --an-jungle: #1A3028;
+  --an-night: #1A3028;
+  --an-forest: #2D5242;
+  --an-moss: #5C8A72;
+  --an-gold: #C8A832;
+  --an-marigold: #C8A832;
+  --an-glow: #F2C94C;
+  --an-dew: #F0E498;
+  --an-cream: #F5F0D8;
+  --an-petal: #F4F1EA;
+  --an-abyss: #111111;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background-color: var(--an-alba);
+  color: var(--an-black);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+#root { width: 100%; min-height: 100vh; display: flex; flex-direction: column; }
+#root > main { flex: 1; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--an-linen); }
+::-webkit-scrollbar-thumb { background: var(--an-orange); border-radius: 2px; }
+::selection { background: var(--an-orange); color: #fff; }
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+select {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  background: transparent; border: none; outline: none; cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif; font-weight: 300;
+}
+button, a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; }
+select, input, textarea { font-size: 16px; }
+
+.font-josefin { font-family: 'Josefin Sans', sans-serif; }
+.font-nunito { font-family: 'Nunito Sans', sans-serif; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn .4s ease forwards; }
