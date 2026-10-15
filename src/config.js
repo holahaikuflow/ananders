@@ -11,14 +11,12 @@ export const CONTACT_EMAIL = ''
 export const SHOW_HERO_STATS = false
 export const HERO_STATS = { exp: '1.200+', countries: '84', ananders: '3.400+', guides: '620+' }
 
-// Fondo del hero. Cambiar `mode` a 'video' o 'carousel' cuando existan los archivos.
 export const HERO_MEDIA = {
-  mode: 'gradient',             // 'gradient' | 'video' | 'carousel'
+  mode: 'carousel',             // 'gradient' | 'video' | 'carousel'
   video: '/media/hero.mp4',
-  poster: '/media/hero-poster.jpg',
+  poster: '/media/hero-1.jpg',
   images: [
     '/media/hero-1.jpg',
     '/media/hero-2.jpg',
-    '/media/hero-3.jpg',
   ],
 }
